@@ -13,25 +13,29 @@
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header">
-        <div class="wrap header-inner">
+        <div class="header-inner">
             <div class="brand">
-                <div class="logo" aria-hidden="true">HB</div>
+                <div class="logo">HB</div>
                 <div>
                     <h1 class="site-title">HopeBridge</h1>
-                    <p class="site-subtitle">Children &amp; Elder Care</p>
+                    <p class="site-subtitle">Children & Elder Care</p>
                 </div>
             </div>
 
-            <nav class="site-nav" aria-label="Primary navigation">
+            <!-- Burger button -->
+            <button class="burger" id="burger">&#9776;</button>
+
+            <!-- Navigation -->
+            <nav class="site-nav" id="mobileNav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about/index.html">About</a></li>
-                    <li><a href="../sponsor/index.html">Sponsor/Donate</a></li>
-                    <li><a href="../impact.html">Impact</a></li>
-                    <li><a href="../events.html">Events</a></li>
-                    <li><a href="index.html" aria-current="page">Stories</a></li>
-                    <li><a href="../get-involved/index.html">Get Involved</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about/index.html">About</a></li>
+                    <li><a href="sponsor/index.html">Sponsor/Donate</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="stories/index.html">Stories</a></li>
+                    <li><a href="get-involved/index.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -169,6 +173,15 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.querySelector(".site-nav");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>
