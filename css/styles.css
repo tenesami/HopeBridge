@@ -1,0 +1,409 @@
+/* HopeBridge – Ethiopian-inspired theme (clean + accessible) */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap");
+:root {
+    /* Warm neutral base */
+    --bg: #fbf6ea;
+    /* warm parchment */
+    --surface: #ffffff;
+    /* cards */
+    --ink: #1b1b1b;
+    /* main text */
+    --muted: #3f3f3f;
+    /* secondary text */
+    --border: rgba(0, 0, 0, 0.12);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --radius: 16px;
+    --max: 1100px;
+    /* Ethiopian-inspired accents (flag-inspired, tuned for accessibility) */
+    --green: #0b6e3b;
+    --gold: #f2c300;
+    --red: #c91f2d;
+    /* Primary/secondary brand usage */
+    --brand: var(--green);
+    --accent: var(--red);
+    /* “Tibeb” inspired stripe */
+    --tibeb: repeating-linear-gradient( 90deg, rgba(11, 110, 59, 0.95) 0 10px, rgba(242, 195, 0, 0.95) 10px 20px, rgba(201, 31, 45, 0.95) 20px 30px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans Ethiopic", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+/* Layout helpers */
+
+.wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* Skip link */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 12px;
+    background: #000;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: underline;
+}
+
+.skip-link:focus {
+    left: 12px;
+}
+
+
+/* Header + Ethiopian stripe accent */
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.site-header::after {
+    content: "";
+    display: block;
+    height: 6px;
+    background: var(--tibeb);
+}
+
+
+/* Header inner */
+
+.header-inner {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Simple “HB” mark with Ethiopian colors */
+
+.logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(11, 110, 59, 0.95), rgba(201, 31, 45, 0.95));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    border: 2px solid rgba(242, 195, 0, 0.85);
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    font-family: "Source Serif 4", Georgia, serif;
+    /* elegant, calm */
+}
+
+.site-subtitle {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+
+/* Navigation */
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 10px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid transparent;
+}
+
+.site-nav a:hover {
+    border-color: var(--border);
+    background: rgba(11, 110, 59, 0.06);
+}
+
+.site-nav a[aria-current="page"] {
+    border-color: rgba(11, 110, 59, 0.35);
+    background: rgba(11, 110, 59, 0.12);
+}
+
+
+/* Sections */
+
+.section {
+    padding: 26px 0;
+}
+
+
+/* Soft “woven” feeling without being busy */
+
+.section.alt {
+    background: linear-gradient(0deg, rgba(242, 195, 0, 0.10), rgba(242, 195, 0, 0.04));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    margin: 0 0 8px;
+    font-size: 1.7rem;
+    font-family: "Source Serif 4", Georgia, serif;
+}
+
+.section-lead {
+    margin: 0 0 16px;
+    color: var(--muted);
+}
+
+
+/* Hero */
+
+.hero {
+    padding: 34px 0;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.hero-copy h2 {
+    margin: 0 0 10px;
+    font-size: 2.05rem;
+    line-height: 1.15;
+    font-family: "Source Serif 4", Georgia, serif;
+}
+
+.hero-copy p {
+    margin: 0 0 16px;
+    color: var(--muted);
+}
+
+.fineprint {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+
+/* Cards */
+
+.card,
+.hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+}
+
+.hero-card h3 {
+    margin: 0 0 10px;
+}
+
+
+/* Lists */
+
+.checklist {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    color: var(--muted);
+}
+
+
+/* Buttons */
+
+.cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    background: var(--surface);
+}
+
+.btn.primary {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    filter: brightness(0.96);
+}
+
+.btn:hover {
+    background: rgba(11, 110, 59, 0.06);
+}
+
+
+/* Links */
+
+.text-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Two/three column grids */
+
+.grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.split {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list-cards {
+    display: grid;
+    gap: 12px;
+}
+
+.mini {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+}
+
+.mini h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+}
+
+.mini p {
+    margin: 0 0 8px;
+    color: var(--muted);
+}
+
+
+/* Footer with stripe */
+
+.site-footer {
+    margin-top: 24px;
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.92);
+    position: relative;
+}
+
+.site-footer::before {
+    content: "";
+    display: block;
+    height: 6px;
+    background: var(--tibeb);
+}
+
+.footer-inner {
+    padding: 22px 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+}
+
+.footer-title {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-family: "Source Serif 4", Georgia, serif;
+}
+
+.footer-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-links {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.site-footer a {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 12px 0 18px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 0.95rem;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .grid.two {
+        grid-template-columns: 1fr;
+    }
+    .split {
+        grid-template-columns: 1fr;
+    }
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
