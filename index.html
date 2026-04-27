@@ -200,6 +200,14 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.querySelector(".site-nav");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>
