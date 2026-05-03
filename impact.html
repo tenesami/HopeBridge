@@ -22,6 +22,12 @@
                 </div>
             </div>
 
+            <button id="burger" class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
             <nav class="site-nav" aria-label="Primary navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -42,6 +48,10 @@
         <section class="section">
             <div class="wrap">
                 <h2 class="section-title">Impact: How Sponsorship Works</h2>
+                <div class="photo-frame">
+                    <img src="../images/IMG_9974.JPG" alt="Community outreach and support" class="hero-image">
+
+                </div>
                 <p class="section-lead">
                     HopeBridge sponsorship is designed to be simple, respectful, and transparent. Supporters can sponsor a child or elder for <strong>$25/month</strong> (subscription) or give a one-time gift. Below is how we turn support into real help
                     and how we share updates.
@@ -254,7 +264,9 @@
         <script>
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
+
     </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

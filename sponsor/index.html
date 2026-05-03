@@ -22,6 +22,12 @@
                 </div>
             </div>
 
+            <button id="burger" class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
             <nav class="site-nav" aria-label="Primary navigation">
                 <ul>
                     <li><a href="../index.html">Home</a></li>
@@ -77,7 +83,9 @@
                             <li>Emergency or seasonal needs (as approved)</li>
                         </ul>
                     </article>
-
+                    <div class="photo-frame">
+                        <img src="../images/IMG_3240.png" alt="HopeBridge community moment" width="1500" height="1000" loading="lazy">
+                    </div>
                     <article class="card">
                         <h3>Start Sponsorship</h3>
                         <p>Choose a profile to sponsor, or sponsor where the need is greatest.</p>
@@ -263,6 +271,14 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
+    <script>
+        const burger = document.getElementById("burger");
+        const nav = document.querySelector(".site-nav");
+
+        burger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 
 </html>

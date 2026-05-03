@@ -14,20 +14,15 @@
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header">
-        <div class="header-inner">
-
+        <div class="wrap header-inner">
             <div class="brand">
-                <div class="logo">HB</div>
+                <div class="logo" aria-hidden="true">HB</div>
                 <div>
                     <h1 class="site-title">HopeBridge</h1>
-                    <p class="site-subtitle">Children & Elder Care</p>
+                    <p class="site-subtitle">Children &amp; Elder Care</p>
                 </div>
             </div>
 
-            <!-- Burger Button -->
-            <button class="burger" id="burger" aria-label="Toggle menu">
-        ☰
-      </button>
 
             <!-- Navigation (Fixed Relative Links) -->
             <nav class="site-nav" id="mobileNav">
@@ -48,6 +43,13 @@
         Donate
       </a>
 
+            <!-- Burger Button -->
+            <button id="burger" class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
         </div>
     </header>
 
@@ -60,7 +62,10 @@
                 <h2 class="section-title">Stories</h2>
 
                 <!-- Added Visual Image -->
-                <img src="../images/community.JPG" alt="Community outreach and support" class="hero-image">
+                <div class="photo-frame">
+                    <img src="../images/IMG_3266.JPG" alt="Community outreach and support" class="photo-frame">
+                </div>
+
 
                 <p class="section-lead">
                     Read updates and stories shared respectfully with permission. These highlights reflect the real impact of your support.
