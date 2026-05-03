@@ -22,7 +22,13 @@
                 </div>
             </div>
 
-            <nav class="site-nav" aria-label="Primary navigation">
+            <button id="burger" class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
+            <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about/index.html">About</a></li>
@@ -42,6 +48,11 @@
         <section class="section">
             <div class="wrap">
                 <h2 class="section-title">Events</h2>
+                <figure class="photo-figure">
+                    <div class="photo-frame">
+                        <img src="images/Home.JPG" alt="HopeBridge community gathering" width="1500" height="1000" loading="lazy">
+                    </div>
+                </figure>
                 <p class="section-lead">
                     Our events bring sponsors, volunteers, and community members together to support children and elders through care drives, fundraising, and volunteer service days.
                 </p>
@@ -190,6 +201,8 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
