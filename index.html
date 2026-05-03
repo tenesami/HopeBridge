@@ -22,7 +22,13 @@
                 </div>
             </div>
 
-            <nav class="site-nav" aria-label="Primary navigation">
+            <button id="burger" class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
+            <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
                 <ul>
                     <li><a href="index.html" aria-current="page">Home</a></li>
                     <li><a href="about/index.html">About</a></li>
@@ -43,6 +49,9 @@
             <div class="wrap hero-inner">
                 <div class="hero-copy">
                     <h2>Make giving simple, respectful, and trustworthy.</h2>
+                    <div class="photo-frame">
+                        <img src="images/IMG_9827.JPG" alt="HopeBridge community moment" width="1500" height="1000" loading="lazy">
+                    </div>
                     <p>
                         HopeBridge supports orphaned children and elders who cannot support themselves by providing essentials like food, shelter, school supplies, and basic necessities.
                     </p>
@@ -200,14 +209,8 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
     </footer>
-    <script>
-        const burger = document.getElementById("burger");
-        const nav = document.querySelector(".site-nav");
 
-        burger.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
